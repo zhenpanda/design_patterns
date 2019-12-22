@@ -1,16 +1,16 @@
-let number = 46;
+let number = 4;
 
 // fib number with memo
 let startFib = (Math.round(new Date().getTime()/1000));
+let memo = {};
 const fib = n => {
-    let memo = {};
-    if(memo.n) return memo.n;
+    if(memo[n]) return memo[n];
     if(n <= 2) f = 1;
     else f = (fib(n-1) + fib(n-2));
-    memo.n = f;
+    memo[n] = f;
     return f;
 }
-console.log("--- fib ->",fib(number));
+console.log("--- fib ->",fib(number), memo);
 let endFib = (Math.round(new Date().getTime()/1000));
 console.log('Execution time: ', (endFib - startFib))
 
@@ -18,7 +18,7 @@ console.log('Execution time: ', (endFib - startFib))
 let startSlowFib = (Math.round(new Date().getTime()/1000));
 const fibSlow = n => {
     if (n <= 2) return 1;
-    else return (fibSlow(n-1)+fibSlow(n-2));
+    else return (fibSlow(n-1) + fibSlow(n-2));
 }
 console.log("----- fibSlow ->", fibSlow(number));
 let endSlowFib = (Math.round(new Date().getTime()/1000));
