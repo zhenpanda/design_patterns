@@ -1,8 +1,7 @@
-let number = 42;
+let number = 46;
 
 // fib number with memo
 let startFib = (Math.round(new Date().getTime()/1000));
-let f = 1;
 const fib = n => {
     let memo = {};
     if(memo.n) return memo.n;
